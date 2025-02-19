@@ -14,7 +14,7 @@ HardwareSerial& DXL_SERIAL = Serial2;
 Dynamixel2Arduino dxl(DXL_SERIAL, DXL_DIR_PIN);
 
 // Declaración de parámetros del Dynamixel
-const uint8_t DXL_ID = 2;
+const uint8_t DXL_ID = 3;
 const float DXL_PROTOCOL_VERSION = 1.0;
 const int DXL_Baud = 1000000;
 

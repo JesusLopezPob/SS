@@ -21,7 +21,7 @@ Dynamixel2Arduino dxl(DXL_SERIAL, DXL_DIR_PIN);
 
 const uint8_t DXL_ID = 1;
 const float DXL_PROTOCOL_VERSION = 2.0;
-const int DXL_Baud = 57600;
+const int DXL_Baud = 1000000;
 
 /*
 const uint8_t DXL_ID = 1;
