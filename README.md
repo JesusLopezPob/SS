@@ -1,6 +1,6 @@
 # Servicio Social
 
-Este repositorio contiene el trabajo realizado durante mi servicio social, incluyendo documentación y código desarrollado para diversas aplicaciones con ESP32.
+Este repositorio contiene el trabajo realizado durante mi servicio social, incluyendo documentación y código desarrollado para  aplicaciones con ESP32.
 
 ## Contenido del Repositorio
 
