@@ -16,8 +16,8 @@ HardwareSerial& DXL_SERIAL = Serial2;
 Dynamixel2Arduino dxl(DXL_SERIAL, DXL_DIR_PIN);
 
 // Definición de los baud rates a escanear
-#define MAX_BAUD 6
-int baud[MAX_BAUD] = {9600, 57600, 115200, 1000000, 2000000, 3000000};
+#define MAX_BAUD 13
+int baud[MAX_BAUD] = {9600,19200, 57600, 115200, 200000,250000, 400000,500000, 1000000, 2000000, 3000000,4000000, 4500000};
 
 // Variable global para almacenar el ID del Dynamixel encontrado
 int found_id = -1;
@@ -48,7 +48,7 @@ void setup() {
 
       // Escaneo de IDs
       if (found==1){
-              for (int id = 1; id < 253; id++) {
+              for (int id = 0; id < 254; id++) {
         if (dxl.ping(id)) {
           Serial.print("Dynamixel encontrado - ID: ");
           Serial.print(id);
@@ -69,18 +69,22 @@ void setup() {
     Serial.println("No se encontró ningún Dynamixel.");
   } else {
     // Configuración adicional si se encuentra un Dynamixel
+    Serial.println("empezando conf");
+    Serial.println(found_id);
     dxl.torqueOff(found_id);
     dxl.setOperatingMode(found_id, OP_POSITION);
     dxl.torqueOn(found_id);
-    dxl.ledOn(1);
-    delay(100);
-    dxl.ledOff(1);
+    Serial.println("prendiendo led");
+    dxl.ledOn(found_id);
+    delay(5000);
+    dxl.ledOff(found_id);
+    Serial.println("apagando led");
   }
 }
 
 void loop() {
   // Ejemplo de movimiento del servomotor
-  /*
+ /* 
   if (found_id != -1 && dxl.ping(found_id)) {
     dxl.setGoalPosition(found_id, 512); // Posición en formato raw
     delay(1000);
@@ -107,6 +111,6 @@ void loop() {
     Serial.println(dxl.getPresentPosition(found_id, UNIT_DEGREE));
     delay(1000);
   }
-  */
-  dxl.ledOn(1);
+*/  
+  dxl.ledOn(0);
 }

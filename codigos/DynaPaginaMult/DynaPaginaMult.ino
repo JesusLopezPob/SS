@@ -115,6 +115,7 @@ void setup() {
 
     dxl.torqueOn(id);
     Serial.println("Servo " + String(id) + " configurado en posición (Protocolo 2.0).");
+ 
   }
 
   // --- Configurar el servo 3 (Protocolo 1.0) ---
